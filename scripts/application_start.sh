@@ -15,5 +15,15 @@ export NVM_DIR="$HOME/.nvm"
 npm install
 npm install express
 
+# Install Mailchimp API dependencies
+npm install @mailchimp/marketing
+
+# Set up environment variables for Mailchimp API
+echo "export MAILCHIMP_API_KEY=your_mailchimp_api_key" >> ~/.bashrc
+echo "export MAILCHIMP_LIST_ID=your_mailchimp_list_id" >> ~/.bashrc
+
+# Source the updated bashrc to make environment variables available
+source ~/.bashrc
+
 #start our node app in the background
 node app.js > app.out.log 2> app.err.log < /dev/null & 
